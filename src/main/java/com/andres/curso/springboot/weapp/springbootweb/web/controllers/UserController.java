@@ -12,19 +12,14 @@ import java.util.List;
 public class UserController {
     // processa request e retorna resposta
 
-    public String[] nomes = {"Jota", "Jessica", "Caleb", "Jughead", "Judy"};
-
-
     @GetMapping("/details")
     public String details(Model model) {
         // as views devem exisir em templates
         // devo retornar o nome da view, não precisa da extensão
-
         // passando parametros para a view
         model.addAttribute("titulo", "View details");
         model.addAttribute("nome", "Jota Santos");
         model.addAttribute("message", "Bem vindo");
-        model.addAttribute("lista", nomes);
         return "details";
     }
 
