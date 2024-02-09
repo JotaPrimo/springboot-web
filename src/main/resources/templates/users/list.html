@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${titulo}">Exemplo Thymeleaf</title>
+</head>
+<body>
+
+<h1 th:text="${title}"></h1>
+
+<!-- Exemplo de estrutura de controle Thymeleaf -->
+<div th:if="${message}">
+    <p th:text="${message}"></p>
+</div>
+
+<div th:if="${users.isEmpty()}" th:text="${'No tiene elementos'}"></div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Apelido</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="user : ${users}">
+            <td th:if="${user.name}" th:text="${user.name}"></td>
+            <td th:if="${user.lastname}" th:text="${user.lastname}"></td>
+            <td th:if="${user.email}" th:text="${user.email}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
